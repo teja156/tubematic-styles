@@ -1,0 +1,352 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Toon Skit shot props (props.shot of every ext_toon_skit scene)",
+ "description": "One cut of a cartoon skit: a set, a framing, up to three characters, and who is talking when.",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "sceneStart",
+  "set",
+  "framing",
+  "cast",
+  "talk"
+ ],
+ "properties": {
+  "sceneStart": {
+   "description": "Copy of this scene entry's startFrame (video frames). The speaker's mouth moves on the video's word timings, so it must match the scene's startFrame exactly.",
+   "type": "integer",
+   "minimum": 0
+  },
+  "set": {
+   "description": "Where the skit happens. Keep one set for a run of shots in the same place; change it only when the story moves.",
+   "enum": [
+    "office",
+    "living_room",
+    "street",
+    "cell"
+   ]
+  },
+  "framing": {
+   "description": "wide = everyone full length (establishing shots, entrances, the setup); two_shot = two characters, closer than the wide, still full length; close = one character (focus) head and chest, for a line that lands, a reaction or a punchline; back = one character (focus) seen from behind walking away (the exit, the ending).",
+   "enum": [
+    "wide",
+    "two_shot",
+    "close",
+    "back"
+   ]
+  },
+  "focus": {
+   "description": "The id of the one character a close or back shot shows. Required for close and back; ignored otherwise.",
+   "enum": [
+    "a",
+    "b",
+    "c"
+   ]
+  },
+  "cast": {
+   "description": "Characters in this shot. A close or back shot draws only the focus; a two_shot holds at most 2.",
+   "type": "array",
+   "minItems": 1,
+   "maxItems": 3,
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "id",
+     "look",
+     "slot",
+     "facing",
+     "poses",
+     "faces"
+    ],
+    "properties": {
+     "id": {
+      "description": "The character's id for the whole video: a, b or c. Use the same id for the same character in every scene.",
+      "enum": [
+       "a",
+       "b",
+       "c"
+      ]
+     },
+     "look": {
+      "description": "What the character looks like. Give each character ONE look and copy it unchanged into every scene they appear in, or they read as a different person.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "skin",
+       "hair",
+       "hairColor",
+       "facial",
+       "outfit",
+       "outfitColor",
+       "hat"
+      ],
+      "properties": {
+       "skin": {
+        "description": "Skin tone.",
+        "enum": [
+         "light",
+         "tan",
+         "brown",
+         "deep"
+        ]
+       },
+       "hair": {
+        "description": "Hair style. none = bald; balding = tufts over the ears only.",
+        "enum": [
+         "none",
+         "short",
+         "side_part",
+         "spiky",
+         "curly",
+         "long",
+         "bun",
+         "balding"
+        ]
+       },
+       "hairColor": {
+        "description": "Hair, brow and facial-hair colour.",
+        "enum": [
+         "black",
+         "brown",
+         "blonde",
+         "red",
+         "grey",
+         "white"
+        ]
+       },
+       "facial": {
+        "description": "Facial hair.",
+        "enum": [
+         "none",
+         "stubble",
+         "beard",
+         "moustache"
+        ]
+       },
+       "outfit": {
+        "description": "Costume: uniform (shirt with pockets, badge and belt: guard, officer, pilot), jumpsuit (one piece with a blank name patch: inmate, mechanic), suit (jacket, shirt, tie), hoodie, tshirt, lab_coat (white coat: doctor, scientist), apron (cook, shopkeeper), dress.",
+        "enum": [
+         "uniform",
+         "jumpsuit",
+         "suit",
+         "hoodie",
+         "tshirt",
+         "lab_coat",
+         "apron",
+         "dress"
+        ]
+       },
+       "outfitColor": {
+        "description": "The costume's main colour (a lab coat stays white and this colours the shirt under it). Pick colours that differ between characters and pop against the muted set: orange, red, mustard, green, blue, purple.",
+        "enum": [
+         "navy",
+         "orange",
+         "grey",
+         "red",
+         "green",
+         "blue",
+         "mustard",
+         "white",
+         "black",
+         "purple",
+         "brown"
+        ]
+       },
+       "hat": {
+        "description": "Hat: peaked_cap (an officer's cap), cap (a baseball cap), beanie, hard_hat (always yellow).",
+        "enum": [
+         "none",
+         "peaked_cap",
+         "cap",
+         "beanie",
+         "hard_hat"
+        ]
+       },
+       "hatColor": {
+        "description": "The hat's colour; absent means the outfit colour.",
+        "enum": [
+         "navy",
+         "orange",
+         "grey",
+         "red",
+         "green",
+         "blue",
+         "mustard",
+         "white",
+         "black",
+         "purple",
+         "brown"
+        ]
+       }
+      }
+     },
+     "slot": {
+      "description": "Where they stand in a wide or two-shot: left, center or right. Keep a character on the same side across shots (screen direction).",
+      "enum": [
+       "left",
+       "center",
+       "right"
+      ]
+     },
+     "facing": {
+      "description": "Which way they face: toward the person they talk to (left of the pair faces right, right faces left). front = to camera. In a close-up, facing right puts them left of centre with room for a pointing arm.",
+      "enum": [
+       "left",
+       "right",
+       "front"
+      ]
+     },
+     "poses": {
+      "description": "Body poses over the scene; each switches on its frame with no tween. point = arm straight out at the other; shrug = both palms up; hand_head = hand behind the head (embarrassed, thinking); finger_up = 'one thing...'; gesture = forearm out, bouncing as they talk; sit and sit_relaxed (leaning back, hand behind head) put them on the set's seat (cot, office chair, sofa, bench). At most 6 entries; a cut usually needs 1 or 2.",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": {
+       "type": "object",
+       "additionalProperties": false,
+       "required": [
+        "at",
+        "pose"
+       ],
+       "properties": {
+        "at": {
+         "description": "Frame of this scene (0 = the scene's first frame) from which it holds. The first entry is at 0.",
+         "type": "integer",
+         "minimum": 0
+        },
+        "pose": {
+         "description": "The pose from this frame on.",
+         "enum": [
+          "stand",
+          "point",
+          "shrug",
+          "arms_crossed",
+          "hand_head",
+          "finger_up",
+          "hands_hips",
+          "wave",
+          "gesture",
+          "sit",
+          "sit_relaxed"
+         ]
+        }
+       }
+      }
+     },
+     "faces": {
+      "description": "Expressions over the scene; each switches on its frame. Change the face on the word that earns it (the reveal, the insult, the punchline). At most 6 entries.",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": {
+       "type": "object",
+       "additionalProperties": false,
+       "required": [
+        "at",
+        "face"
+       ],
+       "properties": {
+        "at": {
+         "description": "Frame of this scene (0 = the scene's first frame) from which it holds. The first entry is at 0.",
+         "type": "integer",
+         "minimum": 0
+        },
+        "face": {
+         "description": "The face from this frame on.",
+         "enum": [
+          "neutral",
+          "happy",
+          "laugh",
+          "smug",
+          "surprised",
+          "angry",
+          "sceptical",
+          "sad",
+          "worried",
+          "sleepy"
+         ]
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "talk": {
+   "description": "Who has the line from which frame of the scene: the speaker's mouth moves while words are spoken. 'none' for a pause, a sound or a reaction with nobody talking. First entry at 0; at most 8.",
+   "type": "array",
+   "minItems": 1,
+   "maxItems": 8,
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "at",
+     "who"
+    ],
+    "properties": {
+     "at": {
+      "description": "Frame of this scene from which this speaker holds.",
+      "type": "integer",
+      "minimum": 0
+     },
+     "who": {
+      "description": "The speaking character's id, or none.",
+      "enum": [
+       "a",
+       "b",
+       "c",
+       "none"
+      ]
+     }
+    }
+   }
+  },
+  "push": {
+   "description": "A very slow 4% push in over the shot. Off by default (the style's camera is locked); use it on at most one or two tense shots per video.",
+   "type": "boolean"
+  }
+ },
+ "allOf": [
+  {
+   "if": {
+    "properties": {
+     "framing": {
+      "enum": [
+       "close",
+       "back"
+      ]
+     }
+    },
+    "required": [
+     "framing"
+    ]
+   },
+   "then": {
+    "required": [
+     "focus"
+    ]
+   }
+  },
+  {
+   "if": {
+    "properties": {
+     "framing": {
+      "const": "two_shot"
+     }
+    },
+    "required": [
+     "framing"
+    ]
+   },
+   "then": {
+    "properties": {
+     "cast": {
+      "maxItems": 2
+     }
+    }
+   }
+  }
+ ]
+}
