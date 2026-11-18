@@ -1,0 +1,81 @@
+{
+ "id": "ext_toon_skit",
+ "label": "Toon Skit",
+ "order": 9500,
+ "experimental": true,
+ "role": "main",
+ "inserts": {
+  "host": false
+ },
+ "dimension": "2d",
+ "preview": "ext_toon_skit",
+ "tagline": "Round-headed cartoon characters act out a quick comic dialogue, cutting to whoever has the line.",
+ "renderer": "dom",
+ "canvas": "dark",
+ "authoring_skill": "tubematic-external-style",
+ "allows": {
+  "figures": false,
+  "line_art": false,
+  "generated_characters": false
+ },
+ "needs": {
+  "openai_key": false,
+  "gpu": false
+ },
+ "mascot": false,
+ "messages": {
+  "mascot": "Mascots are not available in external styles. Choose no mascot.",
+  "inserts": "This external style takes no insert scenes."
+ },
+ "review": "- This video is drawn in the Toon Skit style, and the following are its intended look: flat 2D cartoon characters with big round heads, thick black outlines, black stick arms with mitten hands and round black shoes; muted grey-toned sets (an office, a living room, a street or a cell) with brighter costumes; hard cuts every one to four seconds between a wide shot, a two-shot, a close-up of one character and a back view of someone walking away; limited animation, where poses and faces switch without in-betweens and the speaker's mouth flaps; ONE narrator voice reading every character's lines; captions one word at a time in white outlined capitals across the characters' bodies. Do NOT report the hard cuts, the held poses, the stick limbs, a set repeated across shots, the caption over a body, or one voice playing several characters as defects: they are the style.\n- Do report: a shot that shows a character who does not have the line while that line is spoken (the picture should follow the speaker); a mouth moving on someone who is not speaking; a character whose look (skin, hair, outfit, colours) changes between shots; a caption over a face; characters overlapping each other badly or cut off at the frame edge in a wide shot; a shot held more than about six seconds with nothing changing; anything on screen the script does not support.\n",
+ "captions": {
+  "background": "outline",
+  "uppercase": true,
+  "position": 0.7,
+  "color": "#ffffff",
+  "fontFamily": "system-ui, sans-serif",
+  "fontSize": 78,
+  "maxWords": 1
+ },
+ "script": "Write the video as a short comic dialogue between two characters (three at most), every line read by the one narrator voice. Give each character a clear role named in their first line or the topic (the boss, the new hire, the customer), and keep lines short: 2 to 12 words, one speaker per line, no 'he said' tags. Shape: the premise in the first line, a misunderstanding or reversal in the middle, a punchline at the end; questions and answers keep it moving. 25 to 60 seconds. Every beat's `visual` names the speaker, the framing (wide, two-shot, close-up, back view), the set (office, living room, street or cell) and the face the line calls for. This style draws no text, charts or real people: an idea is explained by what the characters say and how they react.",
+ "picture": {
+  "opening": "Scene 1 is a wide shot of the set from frame 0 with both characters in place and the first speaker already talking.",
+  "turn": "On the word that turns the story, cut to a close-up of the character it lands on, their face switching (surprised, sceptical, worried) on that word.",
+  "payoff": "The punchline is a close-up of whoever says it, smug or laughing, optionally with the slow push.",
+  "ending": "End on a back view of one character walking away, or a wide shot holding the last reaction, to the last frame. No closing card."
+ },
+ "routing": {
+  "best_for": [
+   "a quick comic skit between two characters that makes a point through dialogue",
+   "an everyday situation with a twist: work, home, a shop, the street, a cell",
+   "a fact, myth or tip delivered as a misunderstanding and a punchline"
+  ],
+  "avoid_for": [
+   "anything that needs charts, diagrams, maps or numbers on screen",
+   "real named people, brands or places",
+   "a serious or tragic subject",
+   "stories set somewhere other than an office, a living room, a street or a cell"
+  ],
+  "cannot_show": "text, charts, diagrams, maps, photographs, real people or brands, crowds, or any place other than an office, a living room, a street or a prison cell; only two or three cartoon characters talking",
+  "signals": [
+   "the script reads as dialogue between two people",
+   "the topic has a reversal or a punchline",
+   "the idea can be argued out loud between two characters"
+  ],
+  "moods": [
+   "comic",
+   "deadpan",
+   "playful"
+  ],
+  "images_per_video": "0",
+  "images": 0
+ },
+ "external": {
+  "version": "0.1.5",
+  "author": "Teja",
+  "source": "local",
+  "licence": "MIT",
+  "scene_api": 1,
+  "props_key": "shot"
+ }
+}

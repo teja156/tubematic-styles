@@ -1,0 +1,335 @@
+{
+  "totalFrames": 300,
+  "fps": 30,
+  "canvas": "dark",
+  "scenes": [
+    {
+      "type": "generated",
+      "source": "external",
+      "src": "ext_toon_skit/components/Shot",
+      "startFrame": 0,
+      "durationInFrames": 75,
+      "transitionToNext": {
+        "durationInFrames": 0
+      },
+      "props": {
+        "shot": {
+          "sceneStart": 0,
+          "set": "office",
+          "framing": "wide",
+          "cast": [
+            {
+              "id": "a",
+              "look": {
+                "skin": "brown",
+                "hair": "side_part",
+                "hairColor": "grey",
+                "facial": "moustache",
+                "outfit": "suit",
+                "outfitColor": "grey",
+                "hat": "none"
+              },
+              "slot": "left",
+              "facing": "right",
+              "poses": [
+                {
+                  "at": 0,
+                  "pose": "gesture"
+                }
+              ],
+              "faces": [
+                {
+                  "at": 0,
+                  "face": "happy"
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "look": {
+                "skin": "light",
+                "hair": "curly",
+                "hairColor": "red",
+                "facial": "stubble",
+                "outfit": "hoodie",
+                "outfitColor": "red",
+                "hat": "cap",
+                "hatColor": "mustard"
+              },
+              "slot": "right",
+              "facing": "left",
+              "poses": [
+                {
+                  "at": 0,
+                  "pose": "stand"
+                }
+              ],
+              "faces": [
+                {
+                  "at": 0,
+                  "face": "neutral"
+                },
+                {
+                  "at": 50,
+                  "face": "surprised"
+                }
+              ]
+            }
+          ],
+          "talk": [
+            {
+              "at": 0,
+              "who": "a"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "generated",
+      "source": "external",
+      "src": "ext_toon_skit/components/Shot",
+      "startFrame": 75,
+      "durationInFrames": 45,
+      "transitionToNext": {
+        "durationInFrames": 0
+      },
+      "props": {
+        "shot": {
+          "sceneStart": 75,
+          "set": "office",
+          "framing": "close",
+          "focus": "b",
+          "cast": [
+            {
+              "id": "b",
+              "look": {
+                "skin": "light",
+                "hair": "curly",
+                "hairColor": "red",
+                "facial": "stubble",
+                "outfit": "hoodie",
+                "outfitColor": "red",
+                "hat": "cap",
+                "hatColor": "mustard"
+              },
+              "slot": "right",
+              "facing": "left",
+              "poses": [
+                {
+                  "at": 0,
+                  "pose": "hand_head"
+                }
+              ],
+              "faces": [
+                {
+                  "at": 0,
+                  "face": "surprised"
+                }
+              ]
+            }
+          ],
+          "talk": [
+            {
+              "at": 0,
+              "who": "b"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "generated",
+      "source": "external",
+      "src": "ext_toon_skit/components/Shot",
+      "startFrame": 120,
+      "durationInFrames": 60,
+      "transitionToNext": {
+        "durationInFrames": 0
+      },
+      "props": {
+        "shot": {
+          "sceneStart": 120,
+          "set": "office",
+          "framing": "two_shot",
+          "cast": [
+            {
+              "id": "a",
+              "look": {
+                "skin": "brown",
+                "hair": "side_part",
+                "hairColor": "grey",
+                "facial": "moustache",
+                "outfit": "suit",
+                "outfitColor": "grey",
+                "hat": "none"
+              },
+              "slot": "left",
+              "facing": "right",
+              "poses": [
+                {
+                  "at": 0,
+                  "pose": "hands_hips"
+                }
+              ],
+              "faces": [
+                {
+                  "at": 0,
+                  "face": "happy"
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "look": {
+                "skin": "light",
+                "hair": "curly",
+                "hairColor": "red",
+                "facial": "stubble",
+                "outfit": "hoodie",
+                "outfitColor": "red",
+                "hat": "cap",
+                "hatColor": "mustard"
+              },
+              "slot": "right",
+              "facing": "left",
+              "poses": [
+                {
+                  "at": 0,
+                  "pose": "shrug"
+                }
+              ],
+              "faces": [
+                {
+                  "at": 0,
+                  "face": "worried"
+                }
+              ]
+            }
+          ],
+          "talk": [
+            {
+              "at": 0,
+              "who": "b"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "generated",
+      "source": "external",
+      "src": "ext_toon_skit/components/Shot",
+      "startFrame": 180,
+      "durationInFrames": 60,
+      "transitionToNext": {
+        "durationInFrames": 0
+      },
+      "props": {
+        "shot": {
+          "sceneStart": 180,
+          "set": "office",
+          "framing": "close",
+          "focus": "a",
+          "cast": [
+            {
+              "id": "a",
+              "look": {
+                "skin": "brown",
+                "hair": "side_part",
+                "hairColor": "grey",
+                "facial": "moustache",
+                "outfit": "suit",
+                "outfitColor": "grey",
+                "hat": "none"
+              },
+              "slot": "left",
+              "facing": "right",
+              "poses": [
+                {
+                  "at": 0,
+                  "pose": "stand"
+                },
+                {
+                  "at": 20,
+                  "pose": "finger_up"
+                }
+              ],
+              "faces": [
+                {
+                  "at": 0,
+                  "face": "sceptical"
+                },
+                {
+                  "at": 20,
+                  "face": "smug"
+                }
+              ]
+            }
+          ],
+          "talk": [
+            {
+              "at": 0,
+              "who": "a"
+            }
+          ],
+          "push": true
+        }
+      }
+    },
+    {
+      "type": "generated",
+      "source": "external",
+      "src": "ext_toon_skit/components/Shot",
+      "startFrame": 240,
+      "durationInFrames": 60,
+      "transitionToNext": {
+        "durationInFrames": 0
+      },
+      "props": {
+        "shot": {
+          "sceneStart": 240,
+          "set": "office",
+          "framing": "back",
+          "focus": "b",
+          "cast": [
+            {
+              "id": "b",
+              "look": {
+                "skin": "light",
+                "hair": "curly",
+                "hairColor": "red",
+                "facial": "stubble",
+                "outfit": "hoodie",
+                "outfitColor": "red",
+                "hat": "cap",
+                "hatColor": "mustard"
+              },
+              "slot": "center",
+              "facing": "right",
+              "poses": [
+                {
+                  "at": 0,
+                  "pose": "stand"
+                }
+              ],
+              "faces": [
+                {
+                  "at": 0,
+                  "face": "sad"
+                }
+              ]
+            }
+          ],
+          "talk": [
+            {
+              "at": 0,
+              "who": "none"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "sfx": []
+}

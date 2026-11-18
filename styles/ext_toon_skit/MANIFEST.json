@@ -1,0 +1,15 @@
+{
+ "files": {
+  "components/Shot.tsx": "349a589d8a7aff29970f7a0bf8a17c23c2205b77f75de66591724f118cf25e28",
+  "components/skit/character.tsx": "a7377b0bcb73b05ec359cfcdfaf157210affbcfdb1c017cef67a92c4ecbd510b",
+  "components/skit/contract.ts": "1ef608efbd521e5d0888003e3f90ff82c2b3dfce984f91e0cc3ddf03cc1fe222",
+  "components/skit/ink.ts": "4edd87ed54ae2de3ea16486b932878cbf1123996499befd7d91558baf85186bc",
+  "components/skit/sets.tsx": "8ffc97f84318f3fa5b9d3aecfb18e152d872010418dbde51ca03420b5927ee17",
+  "guide/example-config.json": "6d2787372ebc5655fe927bccc22f7bb8c4a45a3b93886be4d5c7fd0c5f690232",
+  "guide/guide.md": "7d8ae082027e557837cf55793b4875a96c8d6596066eb0a86331cf3b65ec1d79",
+  "preview.mp4": "2daec968d71ed023fe4fbd064c94268bc3dd3ef37f80f0d604b3ac267d6c1070",
+  "preview.webp": "ea77c2ec038a639492eaf544cdc73ba49c52689e30329f8100577a12d24dbcbc",
+  "schema.json": "b0f2a4964f855ac5be651dd728727ebd6fa4f7d287443dd194d76d193924910f",
+  "style.json": "5394e38151bb7dfc92e73a23b5a2fb10348d707bc5966d3176c8851db659a4d7"
+ }
+}
